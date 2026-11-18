@@ -7,11 +7,11 @@
     "forms": {
       "age": {
         "min_age": 18,
-        "max_age": 20,
-        "check_age_in_text": true
+        "max_age": 21,
+        "check_age_in_text": false
       },
       "about_text": {
-        "minimal_text_size": 90,
+        "minimal_text_size": 60,
         "skip_empty_texts": true
       },
       "notify": {
@@ -28,6 +28,21 @@
     "save_media": true
   },
   "telegram": {
-    "delay_between_requests": 0.1
+    "delay_between_requests": 0.1,
+    "adaptive_delay": true,
+    "max_delay": 1.0,
+    "min_delay": 0.1,
+    "cache_duration": 1.0,
+    "concurrent_downloads": 2,
+    "timeout_seconds": 60,
+    "flood_wait_threshold": 60,
+    "backoff_factor": 1.5
+  },
+  "performance": {
+    "enable_caching": true,
+    "enable_parallel_downloads": true,
+    "enable_performance_monitoring": true,
+    "batch_size": 5,
+    "max_concurrent_operations": 3
   }
-}
+} 
